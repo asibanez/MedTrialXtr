@@ -13,9 +13,13 @@ def main(input_folder, output_path):
     for i, path in enumerate(path_list):
         with codecs.open(path, 'r', 'utf-8') as fr:
             file_lines = fr.readlines()
-            lines = lines + file_lines
-            total = total + len(file_lines)
-            print('# lines file', i, '= ', len(file_lines))
+            if i == 0:
+                lines = lines + file_lines
+                total = total + len(file_lines) 
+            else:
+                lines = lines + ['\n'] + file_lines
+                total = total + len(file_lines) + 1
+        print('# lines file', i, '= ', len(file_lines))
     
     print('# total lines =', len(lines))
     print(total)

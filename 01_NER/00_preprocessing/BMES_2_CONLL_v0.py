@@ -8,7 +8,7 @@ def main(input_path, output_path):
     tags_BMES = []
     tags_CONLL = []
     
-    with codecs.open(input_path, 'r', 'utf-8') as fr:
+    with codecs.open(input_path, mode = 'r', encoding = 'utf-8', errors ='replace') as fr:
         file_lines = fr.readlines()
         
         for i, line in tqdm.tqdm(enumerate(file_lines), total = len(file_lines)):
