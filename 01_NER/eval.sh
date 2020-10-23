@@ -4,7 +4,7 @@ gpu=0
 export TASK_NAME=ner
 tagset=reaction
 
-export TASK_DIR=/data/rsg/nlp/sibanez/00_MedTrialXtr/02_runs/00_NER/01_run_01_base
+export TASK_DIR=/data/rsg/nlp/sibanez/00_MedTrialXtr/02_runs/00_NER/03_run_split_juan_80-20
 
 #export MODEL_DIR=/data/rsg/chemistry/sibanez/01_chem_nlp/00_pretrained/chembert_v3.0/
 export MODEL_DIR=$TASK_DIR

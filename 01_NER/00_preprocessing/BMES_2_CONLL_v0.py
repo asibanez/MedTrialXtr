@@ -58,8 +58,11 @@ def main(input_path, output_path):
     
     with codecs.open(output_path, 'w', 'utf-8') as fw:
         for token, tag_CONLL in zip(tokens, tags_CONLL):
-            fw.write(token + '\t' + tag_CONLL + '\n')
-
+            if token == '':
+                fw.write('\n')
+            else:
+                fw.write(token + '\t' + tag_CONLL + '\n')
+ 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("input_path", type=str, help="Path to input BMES file")

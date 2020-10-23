@@ -4,7 +4,7 @@ gpu=1
 export TASK_NAME=ner
 tagset=reaction
 
-export TASK_DIR=/data/rsg/nlp/sibanez/00_MedTrialXtr/02_runs/00_NER/03_run_split_juan_80-20/
+export TASK_DIR=/data/rsg/nlp/sibanez/00_MedTrialXtr/02_runs/00_NER/02_run_base_test_notab/
 
 #model_dir: bert-base-cased, path_to_biobert, path_to_chembert
 #export MODEL_DIR=/data/rsg/chemistry/sibanez/11_MedTrialExtractor/02_models/00_blueBERT/

@@ -95,10 +95,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--oversample-rate", type=int, default=3,
                         help="Oversampling rate for sentences that contain products.")
-    parser.add_argument("--input-file", type=str, default="../data/all.txt",
-                        help="Path to the full dataset.")
-    parser.add_argument("--output-dir", type=str, default="./",
-                        help="Directory for saving the output files.")
+    parser.add_argument("input_file", type=str, help="Path to the full dataset.")
+    parser.add_argument("output_dir", type=str, help="Directory for saving the output files.")
     args = parser.parse_args()
     processor = DataProcessor(oversample_rate=args.oversample_rate)
     processor.split_train_test(input_file=args.input_file, output_dir=args.output_dir)
