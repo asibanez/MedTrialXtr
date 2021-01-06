@@ -4,15 +4,15 @@ gpu=1
 export TASK_NAME=ner
 tagset=reaction
 
-export TASK_DIR=/data/rsg/nlp/sibanez/00_MedTrialXtr/02_runs/00_NER/02_run_base_test_notab/
+export TASK_DIR=/data/rsg/nlp/sibanez/00_MedTrialXtr/02_runs/00_NER/10_run_base_test_notab_bluebert_lowcase_40ep/
 
 #model_dir: bert-base-cased, path_to_biobert, path_to_chembert
-#export MODEL_DIR=/data/rsg/chemistry/sibanez/11_MedTrialExtractor/02_models/00_blueBERT/
-export MODEL_DIR=bert-base-cased
+#export MODEL_DIR=bert-base-cased
+export MODEL_DIR=/data/rsg/nlp/sibanez/00_MedTrialXtr/03_models/04_blueBERT/
 
 output_dir=$TASK_DIR
 
-n_epochs=10
+n_epochs=40
 
 CUDA_VISIBLE_DEVICES=${gpu} python3 run_tagging.py \
     --model_name_or_path ${MODEL_DIR} \
@@ -30,6 +30,7 @@ CUDA_VISIBLE_DEVICES=${gpu} python3 run_tagging.py \
     --overwrite_output_dir \
     --evaluate_during_training \
     --logging_steps 200 \
-    --save_steps -1
+    --save_steps -1 \
+    --do_lower_case
     # --freeze_bert \
     # --local_rank 2
